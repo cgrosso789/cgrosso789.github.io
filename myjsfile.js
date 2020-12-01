@@ -3,8 +3,8 @@
     document.getElementById("seeYouAgain").play();
 };*/
 window.addEventListener("load", playIt);
-document.getElementById("huge").addEventListener("mouseover", showYoung);
-document.getElementById("huge").addEventListener("mouseout", showOlder);
+document.getElementById("RudyManPic").addEventListener("mouseover", showYoung);
+document.getElementById("RudyBoyPic").addEventListener("mouseout", showOlder);
 
 
 function playIt() {
