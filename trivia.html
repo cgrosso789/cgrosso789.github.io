@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about Christine Grosso</title>
+    <link rel="stylesheet" href="css/screenStyle.css" type="text/css" />
+    <link rel="stylesheet" href="css/printStyle.css" media="print" />
+    <script src="myjsfile.js"></script>
+</head>
+<body>
+    <header>
+        <h3>about Christine Grosso</h3>
+    </header>
+    <nav>
+        <ul>
+            <li class="nav"><a href="index.html">Home</a></li>
+            <li class="nav"><a href="whr.html">Critter Lover</a></li>
+            <li class="nav"><a href="quilts.html">Fabric Fanatic</a></li>
+            <li class="nav"><a href="gradStudent.html">Grad Student</a></li>
+            <li class="nav"><a href="skills.html">Software Developer</a></li>
+            <li class="nav"><a href="revolutionTree.html">Revolution Tree Works</a></li>
+            <li class="nav"><a href="rudy.html">Rudy</a></li>
+            <li class="nav"><a href="trivia.html">Trivia</a></li>
+        </ul>
+    </nav>
+    <section class="container oldPhoto">
+        <h4 class="sectionHeader">you could probably guess who these people might be...</h4>
+        <figure class="leftPlus">
+            <img src="Images/RuTinidieterWedding.JPG" class="shortWide" alt="Bride and groom, with 
+            parents and young siblings." width="2048" height="945" />
+            <br />
+            <figcaption>
+                ...but I won't make you. This is little Rudy and Tini at big brother's wedding,
+                with mom and dad in tow.
+            </figcaption>
+        </figure>
+        <section class="rightMinus">
+            <h2>Who am I?</h2>
+            <article>
+                <h3>
+                    Trivia meets history.
+                </h3>
+                <p>
+                    Wanna play a game, while I demonstrate to my Web App professor
+                    that I know how to use forms? Okay, then! &#128521;
+                </p>
+            </article>
+        </section>
+    </section>
+    <section id="triviaSection">
+        <h4>You know what to do:</h4>
+        <form id="triviaForm" name=triviaForm>
+            <div id="fNameRow">
+                <label>Your First Name (required):</label>
+                <input type="text" name="firstName" id="firstName" required autofocus>
+            </div>
+            <div id="greeting"></div>
+            <fieldset id="sports">
+                <legend id="whichSport"><b>Which sport did I compete in through college?</b></legend>
+                <p>
+                    <input type="radio" name="sport" value="softball">Softball <br/>
+                    <input type="radio" name="sport" value="swimming">Swimming <br/>
+                    <input type="radio" name="sport" value="fieldHockey">Field Hockey <br/>
+                    <input type="radio" name="sport" value="tennis">Tennis <br/>
+                </p>
+            </fieldset>
+            <fieldset id="band">
+                <legend id="whichNoiseMaker"><b>Which instruments did I play in high school band?</b></legend>
+                <p>
+                    <input type="checkbox" name="instr1" value="clarinet">Clarinet <br/>
+                    <input type="checkbox" name="instr2" value="tuba">Tuba <br/>
+                    <input type="checkbox" name="instr3" value="flute">Flute <br/>
+                    <input type="checkbox" name="instr4" value="saxophone">Saxophone <br/>                    
+                </p>
+            </fieldset>
+            <fieldset id="other">
+                <legend id="whichThing">Which other activity have I done?</legend>
+                <p>
+                    <input type="radio" name="thing" value="blarney">Kissed the Blarney Stone <br/>
+                    <input type="radio" name="thing" value="windsurf">Windsurfed <br/>
+                    <input type="radio" name="thing" value="hitchhiking">Hitchhiked <br/>                   
+                    <input type="radio" name="thing" value="meridian">Straddled the Prime Meridian <br/> 
+                    <input type="radio" name="thing" value="dolphin">Swam and played with a dolphin <br/>                                       
+                    <input type="radio" name="thing" value="allOfIt">All of the above <br/>                    
+                    <input type="radio" name="thing" value="noneOfIt">None of the above <br/>                    
+                </p>
+            </fieldset>
+            <div id="submitButton">
+                <input type="submit" id="submit" value="Submit">
+            </div>
+        </form>
+    </section>
+    <aside>
+    </aside> 
+    <footer>
+        <p>
+            Photographer for above pic unknown; might have been big brother with his fancy camera.
+        </p>
+    </footer>
+</body>
+</html>

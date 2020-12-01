@@ -1,0 +1,227 @@
+body {  /*set body in grid with 960px width*/
+    display: grid;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1em 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #FFFFFF;
+}
+/*internal hyperlink paragraphs for top and bottom of page*/
+.bottom, .top {
+    border: black;
+    display: none;
+    padding: 15px 32px;
+    text-align: center;
+    grid-template-columns: 10%;
+    grid-template-rows: auto;
+    font-size: 16px;
+}
+
+/*Make Navigation Bar List Inline:*/
+li.nav { /*Stylize nav bars*/
+    display: inline;
+    font-size: 100%;
+    margin-right: 5px;
+}
+nav {
+    background-color: #FFFFFF;
+}
+aside, footer {
+    background-color: #FFFFFF;
+}
+nav, aside, footer {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    border: 5px ridge black;
+    padding: 5px;
+    margin: 5px;
+}
+
+/*Make Picture and Text be side-by-side*/
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    border: 5px ridge #000000;
+    background-color: #FFFFFF;
+    padding: 2px;
+    margin: 5px;
+}
+/*allow container heading to span both columns*/
+.sectionHeader { 
+    grid-column: 1 / span 2;
+    padding: 0 0 0 1em;
+}
+/*override number of container rows=2*/
+.aboutme, .tiniWilson, .furry, .amphib, .spidey, .dbird, 
+.people, .popcorn, .RandEquilt, .Bostonpic, .treeVideo { 
+    grid-template-rows: auto auto;
+}
+/*override number of container rows=3*/
+.rept, .fungi {
+    grid-template-rows: auto auto auto;
+}
+/*override number of container rows=4*/
+.wbirds, .sherlockH {
+    grid-template-rows: auto auto auto auto;
+}
+/*override number of container rows=5*/
+.quiltShow {
+    grid-template-rows: auto auto auto auto auto;
+}
+.internalNav { /*Internal Nav bar for Critter Lover page*/
+    display: none;
+    grid-column: 1/ span 1;
+    grid-template-columns: 10% 11% 12% 9% 9% 9% 16% 8% 8% 8%;
+    /*grid-template-rows: auto;*/
+    background-color: lightgrey;
+    /*width: 100%;*/
+    border: 5px ridge darkblue;
+    padding: 5px;
+    margin: 5px;
+}
+/*containers for resume on skills page*/
+.parchment {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(7, auto);
+    border: 5px ridge #000000;
+    background-color: #FFFFFF;
+    padding: 2px;
+    margin: 5px;
+}
+.resume {
+    display: inline;
+}
+h5 {
+    grid-template-columns: 100%;
+    visibility: hidden;
+    padding: 2px;
+    margin: 0 0 0 10px;
+}
+.resumeIntro {
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto;
+    padding: 20px;
+    margin: 80px 0 0 80px;
+    list-style-type: none;
+    float: left;
+    font-size: large;
+}
+.small {
+    float: right;
+}
+/*resume summary section*/
+.summary, .relevantSkills, .empHist, .education, .certificates, .honors {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    padding-top: 20px;
+}
+/*make rows of education striped for visibility*/
+.odd {
+    background-color: #FFFFFF;
+}
+/*revolution tree works video section*/
+.treeVideo {
+    display: grid;
+    grid-template-columns: 72% 28%;
+}
+.leftVideo {
+    display: none;
+    padding: 2px 1px 2px 2px;
+    margin: 2px 1px 2px 2px;
+}
+.rightAside {
+    padding: 2px 2px 2px 1px;
+    margin: 2px 2px 2px 1px;
+}
+.logobox {
+    grid-template-columns: 100%;
+    grid-template-rows: max-content;
+    font-size: x-large;
+    border: 5px ridge darkblue;
+    padding: 80px 23px 80px 23px;
+}
+/*most pics on the site are in either left or right classes*/
+.left {
+    /*float: left;*/
+    margin: 5px;
+    width: 432px;
+    padding: 2px;
+    margin: 2px;
+}
+.right {
+    /*float: right;*/
+    page-break-after: always;
+    width: 432px;
+    padding: 2px;
+    margin: 2px;
+}
+/*BU course list table*/
+.BUcourses {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border: 5px ridge #000000;
+    background-color: #FFFFFF;
+    padding: 2px;
+    margin: 5px;
+    align-items: center;
+}
+
+figcaption, footer {
+    font-size: 75%;
+}
+aside {
+    font-size: 85%
+}
+
+h2.critterHeading {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+}
+.quiltHeading, .coursesHeading, .RevTWvideo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 32px;
+}
+.center {
+    text-align: center;
+}
+
+/*Photographs * Photographs * Photographs * Photographs:*/
+
+/*90% actual size of 480x640*/
+img.medium {
+    width: 432px;
+    height: 576px;
+    padding: 2px;
+    margin: 2px;
+}
+/*65% actual size of 640x480*/
+img.mediumHorizontal {
+    width: 416px;
+    height: 312px;
+    padding: 2px;
+    margin: 2px;
+}
+/*65% actual size of 640x960*/
+img.mediumTall {
+    width: 416px;
+    height: 624px;
+    padding: 2px;
+    margin: 2px;
+}
+/*65% actual size of 640x427*/
+img.smallerHorizontal {
+    width: 416px;
+    height: 278px;
+    padding: 5px;
+    margin: 25px 10px 2px 10px;
+}
+/*80% actual size of BU ID picture 261x294*/
+img.small {
+    width: 209px;
+    height: 235px;
+    padding: 1px;
+    margin: 0 25px 0 0;
+}
