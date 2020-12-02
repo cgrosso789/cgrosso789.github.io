@@ -24,13 +24,12 @@
             <li class="nav"><a href="trivia.html">Trivia</a></li>
         </ul>
     </nav>
-    </audio>
     <section class="container aboutRudy">
         <h4 class="sectionHeader">Captain Rudy</h4>
         <figure class="largeLeft">
-            <img src="Images/CapnRudy.JPG" class="huge" id="RudyManPic" alt="Upclose of man driving power boat
-            in the ocean." width="2288" height="1712" />
-            <figcaption>
+            <img src="Images/CapnRudy.JPG" class="huge" id="RudyPic" alt="Upclose of man driving power boat
+            in the ocean." width="2288" height="1712" onmouseover="showYoung(this)" onmouseout="showOlder(this)" />
+            <figcaption id="RudyCaption">
                 Photo by Katie Grosso
             </figcaption>
         </figure>
@@ -57,16 +56,11 @@
         </section>
     </section>
     <footer>
-        <audio id="seeYouAgain" controls autoplay loop>
+        <audio id="seeYouAgain" autoplay>
             <source src="Audio/SeeYouAgainWCharliePuth.mp3" type="audio/mpeg">
             Your browser does not support the audio file.
         </audio>
-    
-        <p>
-            Photo by Katie Grosso
-        </p>      
         <p>Music "See you again" by Wiz Kalifa with Charlie Puth</p>
     </footer>
-
 </body>
 </html>

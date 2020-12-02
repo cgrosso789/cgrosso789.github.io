@@ -1,24 +1,23 @@
-/*window.onload = function() {
-    // start the music:
-    document.getElementById("seeYouAgain").play();
-};*/
 window.addEventListener("load", playIt);
-document.getElementById("RudyManPic").addEventListener("mouseover", showYoung);
-document.getElementById("RudyBoyPic").addEventListener("mouseout", showOlder);
-
 
 function playIt() {
     document.getElementById("seeYouAgain").play();
 }
 
-function showYoung() {
-    let manPic = document.getElementById("RudyManPic");
-    let boyPic = "<img src='Images/YoungRudyBoat.JPG' class='medium' id='RudyBoyPic' alt='Upclose of boy driving power boat in the ocean.' width='640' height='420' />";
-    manPic.innerHTML = boyPic;
+function showYoung(manPic) {
+    let manPicCaption=document.getElementById("RudyCaption");
+    manPic.src="Images/YoungRudyBoat.JPG";
+    manPic.setAttribute("class", "medSmall");
+    manPic.width="480";
+    manPic.height="640";
+    manPicCaption.innerHTML = "Photo taken by family friend and boat owner, Saint Lawrence River, Canada";
 }
 
-function showOlder() {
-    let boyPic = document.getElementById("RudyBoyPic");
-    let manPic = "<img src='Images/CapnRudy.JPG' class='huge' id='RudyManPic' alt='Upclose of man driving power boat in the ocean.' width='2288' height='1712' />";
-    boyPic.innerHTML = manPic;
+function showOlder(boyPic) {
+    let boyPicCaption=document.getElementById("RudyCaption");
+    boyPic.src="Images/CapnRudy.JPG";
+    boyPic.setAttribute("class", "huge");
+    boyPic.width="2288";
+    boyPic.height="1712";
+    boyPicCaption.innerHTML = "Photo by Katie Grosso";
 }

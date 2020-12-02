@@ -278,7 +278,14 @@ img.small {
     padding: 1px;
     margin: 0 25px 0 0;
 }
-/*30% actual size of Rudy picture*/
+/*.80% of medium pic so small Rudy can fit in big Rudy frame*/
+img.medSmall {
+    width: 384px;
+    height: 512px;
+    padding-left: 150px;
+    padding-right: 160px;
+}
+/*30% actual size of Rudy man picture*/
 img.huge {
     width: 686px;
     height: 514px;
