@@ -48,14 +48,15 @@ function processTrivia() {  //process name and check boxes
             bandResult.setAttribute("class", "okayEntry");
             bandResult.textContent = "You are partially correct.";
         } else {
-            bandResult.setAttribute("class", "goodEntry");
-            bandResult.textContent = "You are absolutely right!!  Congratulations!";
+            if ((tootToot[0].checked === false) && (tootToot[3].checked === false)) {
+                bandResult.setAttribute("class", "badEntry");
+                bandResult.textContent = "You've left this one blank, which is wrong. Just sayin\'";
+            } else {
+                bandResult.setAttribute("class", "goodEntry");
+                bandResult.textContent = "You are absolutely right!!  Congratulations!";
+            }
         }
     }
-    console.log(tootToot[0].checked);
-    console.log(tootToot[1].checked);
-    console.log(tootToot[2].checked);
-    console.log(tootToot[3].checked);
 }
 
 function processSport(sport) {
@@ -98,18 +99,41 @@ function processActivity(activity) {
             break;
         case "meridian":
             otherResult.setAttribute("class", "okayEntry");
-            otherResult.textContent = "Yep. Greenwich, England. Keep guessing.";
+            otherResult.textContent = "Yep. In Greenwich, England. Keep guessing.";
             break;
         case "dolphin":
             otherResult.setAttribute("class", "okayEntry");
-            otherResult.textContent = "Yep. Turks & Caicos. They made an IMAX video about him years later! Keep guessing!";
+            otherResult.textContent = "Yes, in Turks & Caicos. An IMAX starring this dolphin was made years later! Keep guessing!";
             break;
         case "allOfIt":
             otherResult.setAttribute("class", "goodEntry");
-            otherResult.textContent = "Yes!!! Your list may be more impressive, but I HAVE done all of the above!!";
+            otherResult.textContent = "Yes!!! YOUR list may be more impressive, but I HAVE done all of the above!!";
             break;
         case "noneOfIt":
             otherResult.setAttribute("class", "badEntry");
             otherResult.textContent = "Wrong!!  How boring do you think I look?!";
   }
+}
+
+function getREValues() {
+    //Help for the code in this function came from the CS601 online module 5, as well as
+    //https://www.w3schools.com/xml/ajax_intro.asp
+    //(This is essentially the same piece of code I used in Assignment 5.)
+    let httpRequest = new XMLHttpRequest();
+    if (!httpRequest) {
+        alert('Cannot create an XMLHTTP instance');
+        return false;
+    }
+    httpRequest.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let REText = this.responseText;
+            getREData(REText);
+        }
+    };
+    httpRequest.open("GET", "https://www.fool.com/the-ascent/research/average-house-price-state/", true);
+    httpRequest.send();
+
+}
+function getREData(REString) {
+    document.getElementById("putREDataHere").textContent = REString;
 }
