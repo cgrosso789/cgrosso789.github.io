@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about Christine Grosso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/screenStyle.css" type="text/css" />
     <link rel="stylesheet" href="css/printStyle.css" media="print" />
     <script src="myjsfile.js"></script>
@@ -44,6 +45,9 @@
                 <p>
                     Wanna play a game, while I demonstrate to my Web App professor
                     that I know how to use forms? Okay, then! &#128521;
+                </p>
+                <p>
+                    After the quiz, take a gamble on the advice that the Advice Slip JSON API has to offer...
                 </p>
             </article>
         </section>
@@ -97,10 +101,9 @@
         </form>
     </section>
     <aside>
-        <h4>Enter 2-character state id to get median real estate values: (doesn't work yet)</h4>
-        <input type="text" id="stateId">
-        <input type="submit" value="Submit" onclick="getREValues()">
-        <p id="putREDataHere"></p>
+        <h4>Click here to get (potentially useful?) advice from "Advice Slip JSON API":</h4>
+        <input type="submit" value="Get Me Some Advice" onclick="getAdvice()" class="makeInline">
+        <p id="putAdviceHere" class="makeInline"></p>
     </aside> 
     <footer>
         <p>

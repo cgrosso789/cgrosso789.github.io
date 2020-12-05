@@ -115,7 +115,7 @@ function processActivity(activity) {
   }
 }
 
-function getREValues() {
+function getAdvice() {
     //Help for the code in this function came from the CS601 online module 5, as well as
     //https://www.w3schools.com/xml/ajax_intro.asp
     //(This is essentially the same piece of code I used in Assignment 5.)
@@ -126,14 +126,19 @@ function getREValues() {
     }
     httpRequest.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            let REText = this.responseText;
-            getREData(REText);
+            let adviceText = this.responseText;
+            getAdviceData(adviceText);
         }
     };
-    httpRequest.open("GET", "https://www.fool.com/the-ascent/research/average-house-price-state/", true);
+    httpRequest.open("GET", "https://api.adviceslip.com/advice", true);
     httpRequest.send();
 
 }
-function getREData(REString) {
-    document.getElementById("putREDataHere").textContent = REString;
+function getAdviceData(adviceString) {
+
+    //Extract the advice text from the response:
+    let startIdx = adviceString.indexOf("advice") + 10; // index of start of advice string
+    adviceString = adviceString.slice(startIdx);    //chop off everything before the advice
+    let endIdx = adviceString.indexOf("\"");    //find the index of the end quote
+    document.getElementById("putAdviceHere").textContent = adviceString.slice(0, endIdx);
 }

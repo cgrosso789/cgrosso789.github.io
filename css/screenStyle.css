@@ -188,6 +188,15 @@ fieldset {
     text-align: center;
     margin: 0 75px 0 75px;
 }
+.makeInline {
+    display: inline-block;
+}
+#putAdviceHere {
+    font-family: 'Rye', cursive;
+    font-size: large;
+    color: darkblue;
+    padding-left: 1em;
+}
 
 /*make rows of education striped for visibility*/
 .odd {
