@@ -50,42 +50,47 @@
     </section>
     <section id="triviaSection">
         <h4>You know what to do:</h4>
-        <form id="triviaForm" name=triviaForm>
+        <!--onsubmit format from: https://stackoverflow.com/questions/3384960/want-html-form-submit-to-do-nothing-->
+        <form id="triviaForm" name=triviaForm novalidate onsubmit="processTrivia(); return false;">
             <div id="fNameRow">
                 <label>Your First Name (required):</label>
                 <input type="text" name="firstName" id="firstName" required autofocus>
             </div>
             <div id="greeting"></div>
             <fieldset id="sports">
+                <!--help w/processing radio buttons: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_radio_value3-->
                 <legend id="whichSport"><b>Which sport did I compete in through college?</b></legend>
-                <p>
-                    <input type="radio" name="sport" value="softball">Softball <br/>
-                    <input type="radio" name="sport" value="swimming">Swimming <br/>
-                    <input type="radio" name="sport" value="fieldHockey">Field Hockey <br/>
-                    <input type="radio" name="sport" value="tennis">Tennis <br/>
+                <p id="radioSportButton">
+                    <input type="radio" name="sport" onclick="processSport(this.value)" value="softball">Softball <br/>
+                    <input type="radio" name="sport" onclick="processSport(this.value)" value="swimming">Swimming <br/>
+                    <input type="radio" name="sport" onclick="processSport(this.value)" value="fieldHockey">Field Hockey <br/>
+                    <input type="radio" name="sport" onclick="processSport(this.value)" value="tennis">Tennis <br/>
                 </p>
             </fieldset>
+            <div id="sportsResponse"></div>
             <fieldset id="band">
                 <legend id="whichNoiseMaker"><b>Which instruments did I play in high school band?</b></legend>
                 <p>
-                    <input type="checkbox" name="instr1" value="clarinet">Clarinet <br/>
-                    <input type="checkbox" name="instr2" value="tuba">Tuba <br/>
-                    <input type="checkbox" name="instr3" value="flute">Flute <br/>
-                    <input type="checkbox" name="instr4" value="saxophone">Saxophone <br/>                    
+                    <input type="checkbox" class="instr" name="instr1" value="clarinet">Clarinet <br/>
+                    <input type="checkbox" class="instr" name="instr2" value="tuba">Tuba <br/>
+                    <input type="checkbox" class="instr" name="instr3" value="flute">Flute <br/>
+                    <input type="checkbox" class="instr" name="instr4" value="saxophone">Saxophone <br/>                    
                 </p>
             </fieldset>
+            <div id="bandResponse"></div>
             <fieldset id="other">
                 <legend id="whichThing">Which other activity have I done?</legend>
                 <p>
-                    <input type="radio" name="thing" value="blarney">Kissed the Blarney Stone <br/>
-                    <input type="radio" name="thing" value="windsurf">Windsurfed <br/>
-                    <input type="radio" name="thing" value="hitchhiking">Hitchhiked <br/>                   
-                    <input type="radio" name="thing" value="meridian">Straddled the Prime Meridian <br/> 
-                    <input type="radio" name="thing" value="dolphin">Swam with a wild dolphin <br/>                                       
-                    <input type="radio" name="thing" value="allOfIt">All of the above <br/>                    
-                    <input type="radio" name="thing" value="noneOfIt">None of the above <br/>                    
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="blarney">Kissed the Blarney Stone <br/>
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="windsurf">Windsurfed <br/>
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="hitchhiking">Hitchhiked <br/>                   
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="meridian">Straddled the Prime Meridian <br/> 
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="dolphin">Swam with a wild dolphin <br/>                                       
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="allOfIt">All of the above <br/>                    
+                    <input type="radio" name="thing" onclick="processActivity(this.value)" value="noneOfIt">None of the above <br/>                    
                 </p>
             </fieldset>
+            <div id="otherResponse"></div>
             <div id="submitButton">
                 <input type="submit" id="submit" value="Submit">
             </div>
