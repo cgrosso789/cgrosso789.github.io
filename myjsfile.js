@@ -128,21 +128,9 @@ function getAdvice() {
         if (this.readyState === 4 && this.status === 200) {
             let adviceText = this.responseText;
             document.getElementById("putAdviceHere").textContent = JSON.parse(adviceText).slip.advice;
-            console.log(adviceText);
-            //getAdviceData(adviceText);
         }
     };
     httpRequest.open("GET", "https://api.adviceslip.com/advice", true);
     httpRequest.send();
 
 }
-/*
-function getAdviceData(adviceString) {
-
-    //Extract the advice text from the response:
-    let startIdx = adviceString.indexOf("advice") + 10; // index of start of advice string
-    adviceString = adviceString.slice(startIdx);    //chop off everything before the advice
-    let endIdx = adviceString.indexOf("\"");    //find the index of the end quote
-    document.getElementById("putAdviceHere").textContent = adviceString.slice(0, endIdx);
-}
-*/

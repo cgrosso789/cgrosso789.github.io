@@ -4,12 +4,19 @@ body {  /*set body in grid with 960px width*/
     max-width: 960px;
     padding: 1em 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'BioRhyme', serif;
+    font-family: 'Tillana', cursive;
+    font-family: 'Work Sans', sans-serif;
     background-color: rgb(226, 234, 238);   /*if image doesn't display*/
     background-image: url("Backgrounds/paul-earle-wVjd0eWNqI8-unsplash.jpg");
 }
 
 h1 { /*Give h1 headings dark blue color*/
     color: rgb(42, 44, 165);
+}
+p::first-letter, h2::first-letter, h3::first-letter {
+    font-size: 150%;
+    font-family: 'Rye', cursive;
 }
 /*internal hyperlink paragraphs for top and bottom of page*/
 .bottom, .top {
@@ -31,7 +38,8 @@ p.top:hover, p.bottom:hover {
 /*Make Navigation Bar List Inline:*/
 li.nav { /*Stylize nav bars*/
     display: inline;
-    font-size: 100%;
+    font-weight: bold;
+    font-size: 105%;
     margin-right: 5px;
 }
 nav {
@@ -98,6 +106,7 @@ nav, aside, footer {
     padding: 5px;
     margin: 5px;
 }
+
 /*containers for resume on skills page*/
 .parchment {
     display: grid;
