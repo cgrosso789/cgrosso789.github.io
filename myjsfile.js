@@ -1,26 +1,42 @@
-window.addEventListener("load", playIt);
-
+function startUp() {
+    playIt();
+}
 function playIt() {
     document.getElementById("seeYouAgain").play();
+
+    //include vueApp in function that is called onload,
+    //or else it can't find the el: '#twinRu'
+    const vueApp = new Vue({
+        el: '#twinRu',
+        data: {
+            //initialize data for page load:
+            rudyBoat: 'Images/CapnRudy.JPG',
+            rudyClass: 'huge',
+            rudyWidth: '2288',
+            rudyHeight: '1712',
+            photoCaption: 'Photo by Katie Grosso'
+        },
+        methods: {
+            showYoung: function() {
+                this.rudyBoat = 'Images/YoungRudyBoat.JPG';
+                this.rudyClass = 'medSmall';
+                this.rudyWidth = '480';
+                this.rudyHeight = '640';
+                this.photoCaption = 'Photo taken by family friend and boat owner, Saint Lawrence River, Canada';
+            },
+            showOlder: function() {
+                this.rudyBoat = 'Images/CapnRudy.JPG';
+                this.rudyClass = 'huge';
+                this.rudyWidth = '2288';
+                this.rudyHeight = '1712';
+                this.photoCaption = 'Photo taken by Katie Grosso';
+            }
+       }
+    });
 }
 
-function showYoung(manPic) {
-    let manPicCaption=document.getElementById("RudyCaption");
-    manPic.src="Images/YoungRudyBoat.JPG";
-    manPic.setAttribute("class", "medSmall");
-    manPic.width="480";
-    manPic.height="640";
-    manPicCaption.innerHTML = "Photo taken by family friend and boat owner, Saint Lawrence River, Canada";
-}
+window.addEventListener("load", startUp);
 
-function showOlder(boyPic) {
-    let boyPicCaption=document.getElementById("RudyCaption");
-    boyPic.src="Images/CapnRudy.JPG";
-    boyPic.setAttribute("class", "huge");
-    boyPic.width="2288";
-    boyPic.height="1712";
-    boyPicCaption.innerHTML = "Photo by Katie Grosso";
-}
 
 function processTrivia() {  //process name and check boxes
     //help for setAttribute from: 

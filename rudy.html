@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Tillana&family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/screenStyle.css" type="text/css" />
     <link rel="stylesheet" href="css/printStyle.css" media="print" />
+    <!--Include Vue:-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="myjsfile.js"></script>
 </head>
 <body id="capnRudy">
@@ -29,13 +31,15 @@
     </nav>
     <section class="container aboutRudy">
         <h4 class="sectionHeader">Captain Rudy</h4>
-        <figure class="largeLeft">
-            <img src="Images/CapnRudy.JPG" class="huge" id="RudyPic" alt="Upclose of man driving power boat
-            in the ocean." width="2288" height="1712" onmouseover="showYoung(this)" onmouseout="showOlder(this)" />
-            <figcaption id="RudyCaption">
-                Photo by Katie Grosso
-            </figcaption>
-        </figure>
+        <div id="twinRu">
+            <figure class="largeLeft">
+                <img :src="rudyBoat" :class="rudyClass" id="RudyPic" alt="Upclose of man driving power boat
+                in the ocean." :width="rudyWidth" :height="rudyHeight" v-on:mouseover="showYoung" v-on:mouseout="showOlder" />
+                <figcaption id="RudyCaption">
+                    {{ photoCaption }}
+                </figcaption>
+            </figure>
+        </div>
         <section class="largeRight">
             <h2>He was born an expert...</h2>
             <article>
