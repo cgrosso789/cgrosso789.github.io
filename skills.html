@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Tillana&family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/screenStyle.css" type="text/css" />
     <link rel="stylesheet" href="css/printStyle.css" media="print" />
+    <!--<script src="contactForm.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="myjsfile.js"></script>
 </head>
 <body>
@@ -30,34 +32,45 @@
     <p class="top"><a href="#bottom">Bottom</a></p>
     <section class="container treeOffice">
         <h4 class="sectionHeader">new horizons</h4>
-        <figure class="left">
-            <img src="Images/roberto-nickson-GaBDdA63GcQ-unsplash.jpg" class="smallerHorizontal" 
-            alt="Black and grey laptop Computer beside black smartphone" width="640" height="426"/>
-            <figcaption>
-                <p>
-                    Photo by Roberto Nickson on Unsplash
-                </p>
-            </figcaption>
-        </figure>
+        <div class="left">
+            <figure class="left">
+                <img src="Images/roberto-nickson-GaBDdA63GcQ-unsplash.jpg" class="smallerHorizontal" 
+                alt="Black and grey laptop Computer beside black smartphone" width="640" height="426"/>
+                <figcaption>
+                    <p>
+                        Photo by Roberto Nickson on Unsplash
+                    </p>
+                </figcaption>
+            </figure>
+            <div id="showDate" class="left">
+                <button id="when" v-on:click="getDate">Get Date</button>
+                <span id="timeMsg">
+                    {{ calendar }}
+                </span>
+                <br>
+                <img :hidden="!isClicked" :src="fatherTime" :alt="access" class="medSmallSmall">
+                <h3>{{ message }}</h3>
+            </div>
+        </div>
         <section class="right">
             <h2>
                 They say that &#34;Everything old is new again.&#34;
             </h2>
             <article>
                 <h3>
-                    This is true about the music my teenager listens to.
+                    This is true about the music my teenager listens to...
                 </h3>
                 <p>
-                    This is also true about my software skill set.  In 1988 I left software
+                    ...and about my software skill set.  In 1988 I left software
                     engineering to be a <b>full-time mom</b>.  Now, I&#39;ve spent the last 
                     3 years polishing my skills to be a full-time software engineer again.
                 </p>
                 <p>
-                    Although there is no real gap in the &#34;resum&#233; of my life&#34; (thanks largely to my
-                    children, through whom I've learned lessons too numerous to include here), there appears 
-                    to be one in my <i>professional-skills resum&#233;</i>. When I came to
-                    the decision, at the end of 2017, that I wanted to go back into <b>software development</b>, 
-                    I knew I needed to compensate for that.  Here is a list of ways that I did that:
+                    Although there is no real gap in the &#34;resum&#233; of my life&#34; (thanks
+                    to my family!), there appears 
+                    to be one in my <i>professional-skills resum&#233;</i>. When I decided to go back
+                    into <b>software development</b> in 2018, I knew I needed to compensate for that,
+                    so here is what I did:
                 </p>
                 <h4>at Nashua Community College:</h4>
                 <ul>
@@ -225,6 +238,7 @@
         </p>
     </aside>
     <footer>
+        <h6>father time clip art from: http://clipart-library.com/clipart/BcgE8oz7i.htm</h6>
         <p id="bottom">
             This page, produced in early November, 2020, is in anticipation of graduation from BU in December
             of 2020.

@@ -2,6 +2,26 @@ function startUp() {
     playIt();
 }
 function playIt() {
+    const vueApp2 = new Vue({
+        el: '#showDate',
+        data: {
+            fatherTime: '',
+            access: '',
+            calendar: '',
+            message: '',
+            isClicked: false
+        },
+        methods: {
+            getDate: function() {
+                console.log("getDate called");
+                this.calendar = Date();
+                this.message = 'Time to Get a Job!';
+                this.fatherTime = 'Images/fatherTimeImg.png';
+                this.access = 'cartoon image of Father Time';
+                this.isClicked = true;
+            }
+        }
+    });
     document.getElementById("seeYouAgain").play();
 
     //include vueApp in function that is called onload,
@@ -36,7 +56,6 @@ function playIt() {
 }
 
 window.addEventListener("load", startUp);
-
 
 function processTrivia() {  //process name and check boxes
     //help for setAttribute from: 
