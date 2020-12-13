@@ -3,7 +3,10 @@ function startUp() {
     new Vue ({
         el: '#picRefresh',
         data: {
-            photoSrc: 'Images/BabyPossumM.JPG',
+            photoSrc: 'Images/BabyPossumM.JPG', //initialize 1st pic
+            photoSrc2: 'Images/BabyPossumM.JPG',    //initialize 2nd pic
+            pictureNum: 1,  //index of BabyPossum pic
+            randomNum: 1,   //what the heck; initialize this to 1, as well
             pictures: ["Images/AmanitaMushroomM.JPG",
             "Images/BabyPossumM.JPG",
             "Images/BabyWildTurkeyM.JPG",
@@ -39,9 +42,13 @@ function startUp() {
         },
         methods: {
             getNewPic: function() {
-                let randomNum = getRandomInt(this.pictures.length);
-                this.photoSrc = this.pictures[randomNum];
-                console.log("Random Number index: " + randomNum);
+
+                this.randomNum = getRandomInt(this.pictures.length);
+                this.photoSrc = this.photoSrc2;
+                this.photoSrc2 = this.pictures[this.randomNum];
+
+                //for debug:
+                console.log("Random Number index: " + this.randomNum);
             }
         }
     });
