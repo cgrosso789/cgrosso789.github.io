@@ -56,6 +56,34 @@ nav, aside, footer {
     padding: 4px;
     margin: 4px;
 }
+/****The following chunk of code is modified slightly from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_box****/
+.flip-box {
+    background-color: transparent;
+    width: 240px;
+    height: 320px;
+    perspective: 1000px;
+}
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-box-back {
+    transform: rotateY(180deg);
+}
+/************************************************************************************************************************************/
 
 /*Make Picture and Text be side-by-side*/
 .container {
@@ -322,11 +350,17 @@ img.medSmall {
     padding-left: 150px;
     padding-right: 160px;
 }
-/*60% of med pic for father time, and to get it to float left*/
+/*60% of med pic for father time, and to get it to "float" left*/
 img.medSmallSmall {
     width: 288px;
     height: 384px;
     padding-left: 60px;
+}
+/*50% of slide show pictures*/
+img.slideShow {
+    width: 240px;
+    height: 320px;
+    padding: 85px;
 }
 /*30% actual size of Rudy man picture*/
 img.huge {

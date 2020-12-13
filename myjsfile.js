@@ -22,7 +22,6 @@ function playIt() {
             }
         }
     });
-    document.getElementById("seeYouAgain").play();
 
     //include vueApp in function that is called onload,
     //or else it can't find the el: '#twinRu'
@@ -53,9 +52,66 @@ function playIt() {
             }
        }
     });
+
+    const vueApp3 = new Vue ({
+        el: '#picRefresh',
+        data: {
+            photoSrc: 'Images/BabyPossumM.JPG',
+        },
+        created: function() {
+           setInterval(function(){ getNewPic(); }, 2000);
+       }
+    });
+
+    //play music when rudy.html page loads:
+    document.getElementById("seeYouAgain").play();
 }
 
 window.addEventListener("load", startUp);
+
+let pictureIdx = 1; //initialize first picture idx to Baby Possum
+
+function getNewPic() {
+    console.log("in method");
+    let pictures = ["Images/AmanitaMushroomM.JPG",
+                    "Images/BabyPossumM.JPG",
+                    "Images/BabyWildTurkeyM.JPG",
+                    "Images/BabyWoodChuckM.JPG",
+                    "Images/BearTrackM.JPG",
+                    "Images/BeautifulEggsM.JPG",
+                    "Images/BoatersM.JPG",
+                    "Images/CanoeBirdsM.JPG",
+                    "Images/CritterSkullM.JPG",
+                    "Images/DeadCedarWaxWingM.JPG",
+                    "Images/FoxTraxM.JPG",
+                    "Images/GardenSpiderM.JPG",
+                    "Images/GarterSnakeM.JPG",
+                    "Images/GravidSnapperM.JPG",
+                    "Images/HenAndChicksM.JPG",
+                    "Images/IrridescentBeetleM.JPG",
+                    "Images/MooseTraxM.JPG",
+                    "Images/MorelMushroomM.JPG",
+                    "Images/NestCowbirdM.JPG",
+                    "Images/OwlAtDuskM.JPG",
+                    "Images/RaspberriesM.JPG",
+                    "Images/RedEftM.JPG",
+                    "Images/RusticLeavesM.JPG",
+                    "Images/SquirrelTraxM.JPG",
+                    "Images/TubersM.JPG",
+                    "Images/WildTurkeysM.JPG",
+                    "Images/WilsonWaterSnakeM.JPG",
+                    "Images/WoodTurtleM.JPG",
+                     ];
+    document.getElementById("slideShow").setAttribute("src", pictures[pictureIdx]);
+    pictureIdx = getRandomInt(pictures.length);
+    document.getElementById("slideShow2").setAttribute("src", pictures[pictureIdx]);
+}
+
+//from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// called by getNewPic to randomly display slide show images
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
 
 function processTrivia() {  //process name and check boxes
     //help for setAttribute from: 
