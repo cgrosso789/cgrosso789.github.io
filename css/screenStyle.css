@@ -56,7 +56,7 @@ nav, aside, footer {
     padding: 4px;
     margin: 4px;
 }
-/****The following chunk of code is modified slightly from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_box****/
+/****The following chunk of code is modified slightly from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_box
 .flip-box {
     background-color: transparent;
     width: 240px;
@@ -83,7 +83,7 @@ nav, aside, footer {
 .flip-box-back {
     transform: rotateY(180deg);
 }
-/************************************************************************************************************************************/
+************************************************************************************************************************************/
 
 /*Make Picture and Text be side-by-side*/
 .container {
