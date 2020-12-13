@@ -1,5 +1,7 @@
 function startUp() {
-
+    playIt();
+}
+function playIt() {
     //include vueApp in function that is called onload,
     //or else it can't find the el: '#twinRu'
     new Vue({
@@ -11,6 +13,9 @@ function startUp() {
             rudyWidth: '2288',
             rudyHeight: '1712',
             photoCaption: 'Photo by Katie Grosso'
+        },
+        created: function () {
+            this.showOlder();
         },
         methods: {
             showYoung: function() {
@@ -29,9 +34,8 @@ function startUp() {
             }
        }
     });
-
-    //play music when rudy.html page loads:
-    document.getElementById("seeYouAgain").play();
+        //play music when rudy.html page loads:
+        document.getElementById("seeYouAgain").play();
 }
 
 window.addEventListener("load", startUp);
