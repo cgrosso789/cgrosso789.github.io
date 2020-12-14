@@ -255,9 +255,8 @@ fieldset {
 .logobox {
     grid-template-columns: 100%;
     grid-template-rows: max-content;
-    font-size: x-large;
     border: 5px ridge darkblue;
-    padding: 80px 23px 80px 23px;
+/*    padding: 80px 23px 80px 23px;*/
 }
 /*most pics on the site are in either left or right classes*/
 .left {
@@ -371,4 +370,9 @@ img.huge {
 img.shortWide {
     width: 512px;
     height: 236px;
+}
+/*37% actual size of Rob logo image*/
+img.square {
+    width: 235px;
+    height: 235px;
 }

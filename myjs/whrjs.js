@@ -8,6 +8,7 @@ function startUp() {
                 photoSrc2: 'Images/BabyPossumM.JPG',    //initialize 2nd pic
                 pictureNum: 1,  //index of BabyPossum pic
                 randomNum: 1,   //what the heck; initialize this to 1, as well
+                //This array produces the slide show on the Critter Lover page
                 pictures: ["Images/AmanitaMushroomM.JPG",
                 "Images/BabyPossumM.JPG",
                 "Images/BabyWildTurkeyM.JPG",

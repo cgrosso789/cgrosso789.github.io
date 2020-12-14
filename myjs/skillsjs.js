@@ -1,12 +1,14 @@
 function startUp() {
     new Vue({
         el: '#showDate',
-        data: {
-            fatherTime: '',
-            access: '',
-            calendar: '',
-            message: '',
-            isClicked: false
+        data: function() {
+            return {
+                fatherTime: '',
+                access: '',
+                calendar: '',
+                message: '',
+                isClicked: false
+            }
         },
         methods: {
             getDate: function() {
