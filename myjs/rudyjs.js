@@ -9,7 +9,7 @@ function playIt() {
         data: function() {
             return {
                 //initialize data for page load:
-                rudyBoat: 'Images/CapnRudy.JPG',
+                rudyBoat: '../Images/CapnRudy.JPG',
                 rudyClass: 'huge',
                 rudyWidth: '2288',
                 rudyHeight: '1712',
@@ -21,14 +21,14 @@ function playIt() {
         },
         methods: {
             showYoung: function() {
-                this.rudyBoat = 'Images/YoungRudyBoat.JPG';
+                this.rudyBoat = '../Images/YoungRudyBoat.JPG';
                 this.rudyClass = 'medSmall';
                 this.rudyWidth = '480';
                 this.rudyHeight = '640';
                 this.photoCaption = 'Photo taken by family friend and boat owner, Saint Lawrence River, Canada';
             },
             showOlder: function() {
-                this.rudyBoat = 'Images/CapnRudy.JPG';
+                this.rudyBoat = '../Images/CapnRudy.JPG';
                 this.rudyClass = 'huge';
                 this.rudyWidth = '2288';
                 this.rudyHeight = '1712';
