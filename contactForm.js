@@ -8,7 +8,7 @@ app.component('contact-form', {
 
         <label for="message" v-model="message">Your message:</label>
         <textarea id="message"></textarea>
-        <input> class="button" type="submit" value="Submit">
+        <input class="button" type="submit" value="Submit">
     </form>`,
     data() {
         return {

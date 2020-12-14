@@ -228,6 +228,10 @@ fieldset {
 .makeInline {
     display: inline-block;
 }
+#advice {
+    font-size: 150%;
+    font-weight: 900;
+}
 #putAdviceHere {
     font-family: 'Rye', cursive;
     font-size: large;
